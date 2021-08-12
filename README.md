@@ -9,7 +9,7 @@ Responses to Temperatures of Different Drosophila Species
 - [Input File Organization](#input-file-organization)
 	- [CSV File](#csv-file)
 	- [TIFF File](#tiff-file)
-  - [Folder Organization](#folder-organization)
+  - [Input Folder Organization](#input-folder-organization)
   - [Output Organization](#output-organization)
 - [Code Documentation](#code-documentation)
 
