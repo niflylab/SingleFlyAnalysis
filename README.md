@@ -49,15 +49,16 @@ It also provides the starting and ending temperature sides of the fly.
 ### Output Organization
   - The output is a .csv file that is saved one directory above the input folder. It is designed to make sure that when the code is rerun, the file does not become overwritten, but has a 0,1,2 etc. at the end.
   - The output creates a row for each trial that is in the input folder and contains all the information from the name of the file as well as the calculated values.
+  - The last column, line_array, allows user to check if the line has been recognized in the correct place.
 
 ## Code Documentation
 
-#### tracking_calcs(*folder_location, temp_right, temp_left, PI_direction = 'left', file_name = 'data_csv', frame_start = 0, frame_end = 120*)  
+#### tracking_calcs(*folder_location, temp_right, temp_left, PI_direction = 'left', file_name = 'data_csv', frame_total = 120*)  
   
 1) Separates the information in the file name of the .csv file.
 2) Matches the .tif file to the .csv file. 
 3) Reads the location of temperature division line from the first TIFF image.
-4) Using the temperature division line, the code counts how many times the fly is in each temperature region or in the middle in the frames indicated. 
+4) Using the temperature division line, the code counts how many times the fly is in each temperature region or in the middle. 
 5) Deciphers where the fly starts, ends, and counts on each side. Calculates the Distance, Speed, and PI depending on the direction the code is set (left or right).
 6) Outputs one .csv file with each row having the information for each trial in the folder.
   
@@ -81,11 +82,9 @@ It also provides the starting and ending temperature sides of the fly.
 	<dt>file_name: str, default 'data_csv'</dt>
 		<dd>Set the basename of the output file</dd> 
 		<dd>The default parameter is set to 'data_csv'.</dd>
-    <dd> The frames analyzed, output-data, and the number of times this code was run with this file_name is the of final name of the output file. 
-    <dd> For example, if the default 'data_csv' is given as the basename, the frames analyzed are 0-120, and it is the first time the code executed with this name the output file name would be:
-    <dd> "data_csv_0-120_output-data0.csv"
-	<dt>frame_start: int, default 0 </dt>
-		<dd>The frame the analysis will start analyzing from.</dd>
-  <dt>frame_end: int, default 120 </dt>
-		<dd>The frame the analysis will end analyzing.</dd>
+    <dd> The output-data and the number of times this code was run with this file_name is the of final name of the output file. 
+    <dd> For example, if the default 'data_csv' is given as the basename and it is the first time the code executed with this name the output file name would be:
+    <dd> "data_csv_output-data0.csv"
+	<dt>frame_total: int, default 0 </dt>
+		<dd>The number of frames that are in the set.</dd>
 </dl>
